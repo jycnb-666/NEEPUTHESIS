@@ -1,0 +1,40 @@
+% 论文第二章
+\renewcommand{\baselinestretch}{1.5}
+\section{PWM逆变器工作原理}
+\subsection{二级标题}
+\subsubbsection{2.1.1}{三级标题}
+\zihao{-4}
+正文中的公式。采用“equation”环境进行编辑。
+\begin{equation}
+E_i = \int|c_i(t)|^2 dt = \sum_{j=1}^{m}|c_{ij}|^2
+\end{equation}
+其中， $i =1,2,\dots,n,j=1,2,\dots,m$表示IMF的离散点的幅值，为信号采样点的数目。
+（公式中涉及的字母所代表的物理量要全部指明。）\par
+正文中的图，采用“figure”环境进行编辑。（图题在图的下方，居中，图题文字为五号宋体，图中文字为小五号）\par
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=9cm]{example-image-a.pdf}
+\caption{功率波动的概率密度分布曲线图}     \label{fig1}
+\end{figure}
+
+正文中的表，采用“table”等环境进行编辑，建议采用Excel2lateX宏包直接在Excel中生成代码，设为1.2倍行距，标题和表格间距-5 pt。（采用三线表，表题为五号宋体，表中为小五宋体。表题在表上方，居中）
+\begin{table}[htbp]
+  \centering
+  \caption{三种流型各模态能量特征表}
+  \vspace{-5pt}
+  \begin{spacing}{1.2}
+    \begin{tabular}{ccccccccc}
+    \hline
+    流型    & IMF1  & IMF2  & IMF3  & IMF4  & IMF5  & IMF6  & IMF7  & IMF8 \bigstrut\\
+    \hline
+    A     & 0.5284 & 0.3418 & 0.055 & 0.0449 & 0.0175 & 0.0026 & 0.0039 & 0.0058 \bigstrut[t]\\
+    A     & 0.5326 & 0.3406 & 0.0571 & 0.0423 & 0.0155 & 0.0024 & 0.0036 & 0.0059 \\
+    B     & 0.458 & 0.308 & 0.0914 & 0.0623 & 0.0312 & 0.0323 & 0.0096 & 0.0082 \\
+    B     & 0.4542 & 0.316 & 0.0919 & 0.0646 & 0.0345 & 0.0226 & 0.0068 & 0.0095 \\
+    C     & 0.5782 & 0.2105 & 0.1041 & 0.0439 & 0.0476 & 0.0053 & 0.0077 & 0.0028 \\
+    C     & 0.5762 & 0.2155 & 0.1006 & 0.0421 & 0.0502 & 0.0043 & 0.0087 & 0.0034 \bigstrut[b]\\
+    \hline
+    \end{tabular}%
+  \end{spacing}
+  \label{tab:addlabel}%
+\end{table}%
