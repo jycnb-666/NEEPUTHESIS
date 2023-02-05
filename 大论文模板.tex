@@ -1,0 +1,72 @@
+%-*- coding:UTF*8 -*-
+% 大论文.tex
+\documentclass{NEEPU_THESIS}
+\begin{document}
+% 插入封面
+\makecover{虚拟同步发电机}{VSG}{Sebastian}{电自卓越191}{2019301011016}{指导教师}{电气工程学院}{2023.2.5}
+
+\newpage
+\setcounter{page}{1}    % 重置页码
+\pagenumbering{Roman}   % 设置正文页码格式
+
+% 插入中文摘要
+\neepupagestylea
+\begin{Abstractcn}
+    随着电力电子器件的发展，PWM电压型逆变器在交流变频调速、UPS、电能质量控制器、轻型直流输电换流器等电力电子装置中得到了越来越广泛的应用。PWM电压型逆变器直流侧所需的理想无脉动直流电压源通常通过整流加上大直流电容滤波获得。大直流滤波电容的使用，给装置带来占用空间大、成本高及严重影响电能质量方面的问题。因此，研究如何减小甚至去除逆变器直流侧电容，以及解决因其产生的低次谐波和相关问题，具有十分重要的理论意义和实用价值。本文在综述了国内外在PWM电压型逆变器及各种抑制谐波PWM技术的基础上，对目前工程中应用最广泛的SPWM电压型逆变器的主电路及谐波消除调制技术和相关问题进行了深入研究。
+\end{Abstractcn}
+
+\begin{Keywordscn}
+    PWM逆变器；直流电容；调制波重构SPWM；六脉动直流电压
+\end{Keywordscn}
+
+\newpage
+% 插入英文摘要
+\neepupagestylea
+\begin{Abstracten}
+    With the rapid development of the power and electron parts, PWM voltage inverter is applied, on a larger and larger scale, to ac frequency control system、UPS、power quality controller and Converter of highlight HVDC transmission. Non-ripple DC voltage source of PWM voltage type Inverter is gained by rectifiers paralleled connection a large DC filter capacitor. The equipment that uses a large DC filter capacitor has disadvantages, such as bulk, high price and low power quality. It is therefore becoming most significant and valuable to do research on how to reduce capacitance as small as possible or even remove capacitor and how to settle relative issues and to eliminate low order harmonics due to minishing capacitance or removing capacitor. Based on the survey of main circuits of inverter and restraining harmonic effects of PWM techniques, the main circuits and harmonic elimination PWM techniques of SPWM voltage type inverter, which applied widely in industry fields, are profoundly analyzed.
+\end{Abstracten}
+\begin{Keywordsen}
+    {PWM inverter; DC capacitor; Six-ripple DC voltage; Modulation wave reconstruction SPWM}
+\end{Keywordsen}
+\newpage
+
+\addcontentsline{toc}{section}{目\quad 录}
+\begin{spacing}{1.5}
+\tableofcontents\thispagestyle{fancy}       % 避免目录第二页没有页眉页脚
+\end{spacing}
+
+
+%% 重新定义二级标题，将目录和正文二级标题格式区别开来（前者不能加粗，后者需要加粗）
+%% 参数1：编号
+%% 参数2：标题
+% \addcontentsline{toc}{subsubsection}{\songti{#1\hspace{0.7em} #2}}
+% \renewcommand{\subsubsection}[2]{
+% \subsubsection*{#1\hspace{1em}\textbf{#2}}
+% }   
+%
+%
+%% 正文从此开始
+\newpage
+%% 设置页眉页脚格式
+
+\neepupagestylechap     % 页码从正文开始
+
+% 第一章
+\include{chap01}
+
+% 第二章
+\include{chap02}
+
+% 结论
+\include{conclusion}
+
+% 参考文献
+\include{reference}
+
+% 致谢
+\include{thanks}
+
+% 附录
+\include{appendix}
+
+\end{document}
