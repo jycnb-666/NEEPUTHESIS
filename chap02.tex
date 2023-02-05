@@ -1,9 +1,8 @@
 % 论文第二章
-\renewcommand{\baselinestretch}{1.5}
+\bodystyle
 \section{PWM逆变器工作原理}
 \subsection{二级标题}
-\subsubbsection{2.1.1}{三级标题}
-\zihao{-4}
+\subsubsection{三级标题}
 正文中的公式。采用“equation”环境进行编辑。
 \begin{equation}
 E_i = \int|c_i(t)|^2 dt = \sum_{j=1}^{m}|c_{ij}|^2
@@ -18,12 +17,7 @@ E_i = \int|c_i(t)|^2 dt = \sum_{j=1}^{m}|c_{ij}|^2
 \end{figure}
 
 正文中的表，采用“table”等环境进行编辑，建议采用Excel2lateX宏包直接在Excel中生成代码，设为1.2倍行距，标题和表格间距-5 pt。（采用三线表，表题为五号宋体，表中为小五宋体。表题在表上方，居中）
-\begin{table}[htbp]
-  \centering
-  \caption{三种流型各模态能量特征表}
-  \vspace{-5pt}
-  \begin{spacing}{1.2}
-    \begin{tabular}{ccccccccc}
+\begin{NEEPUtritable}{cccccccccc}{三种流型各模态能量特征表}
     \hline
     流型    & IMF1  & IMF2  & IMF3  & IMF4  & IMF5  & IMF6  & IMF7  & IMF8 \bigstrut\\
     \hline
@@ -34,7 +28,4 @@ E_i = \int|c_i(t)|^2 dt = \sum_{j=1}^{m}|c_{ij}|^2
     C     & 0.5782 & 0.2105 & 0.1041 & 0.0439 & 0.0476 & 0.0053 & 0.0077 & 0.0028 \\
     C     & 0.5762 & 0.2155 & 0.1006 & 0.0421 & 0.0502 & 0.0043 & 0.0087 & 0.0034 \bigstrut[b]\\
     \hline
-    \end{tabular}%
-  \end{spacing}
-  \label{tab:addlabel}%
-\end{table}%
+\end{NEEPUtritable}

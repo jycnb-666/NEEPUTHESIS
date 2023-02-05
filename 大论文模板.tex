@@ -1,165 +1,67 @@
 %-*- coding:UTF*8 -*-
 % 大论文.tex
-\documentclass[UTF8]{ctexart}
+%Copyright © 2022-2023 jycnb-666 and J.K Hao
 
-% 标题格式
-\usepackage[labelfont=bf,justification=centering]{caption}
-\CTEXsetup[name={第,章},format={\centering\zihao{-2}\heiti},beforeskip=0.5em,afterskip=1em]{section}
-\CTEXsetup[format={\zihao{3}\heiti},beforeskip=0.5em,afterskip=1em]{subsection}
-\CTEXsetup[format={\zihao{4}\songti},beforeskip=0.5em,afterskip=0.5em]{subsubsection}
+%使用NEEPU_THSIS论文模板，参数与ctexart相同（通过NEEPU_THESIS将传递给ctexart）
+\documentclass{NEEPU_THESIS}
 
-% 页面
-\usepackage{geometry}
-\geometry{a4paper,left=3.17cm,right=3.17cm,top=2.54cm,bottom=2.54cm}
-
-% 页眉页脚
-\usepackage{fancyhdr}
-
-% 目录格式
-\usepackage[titles,subfigure]{tocloft}    
-
-% 字体
-\usepackage{xeCJK}
-\usepackage{CJKpunct}   % 标点符号
-\usepackage{fontspec}   % 修改字体
-\usepackage{bm}         % 字母加粗
-
-% 列表环境
-\usepackage{enumerate}  % 列表宏包
-\usepackage{enumitem}   % 调整列表格式
-
-% 行距
-\usepackage{setspace}
-\setlength{\parskip}{0pt}       % 段与段间距
-
-% 公式环境
-\usepackage{mathtools}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{mathptmx}
-\usepackage{mathrsfs}   % 花体
-\renewcommand{\theequation}{\arabic{section}-\arabic{equation}}  % 设置公式编号样式
-\makeatletter
-\@addtoreset{equation}{section}     % 避免换章节公式不置零
-\makeatother
-
-% 图表环境
-\usepackage{graphicx}
-\graphicspath{{figure/}}        % 图片路径
-\usepackage{subfigure}          % 并列排列多张图
-\usepackage{float}              % 浮动体
-\usepackage{booktabs}           % 三线表
-\usepackage{bigstrut,multirow,rotating}     % 特殊表格
-\usepackage{makecell}           % 表格内换行
-\captionsetup{labelsep=quad}    % 图表标题格式
-\renewcommand{\thefigure}{\arabic{section}-\arabic{figure}}      % 设置图像编号样式
-\renewcommand{\thetable}{\arabic{section}-\arabic{table}}        % 设置表格编号样式
-
-% 参考文献格式
-\usepackage[numbers,sort&compress]{natbib} 
-\newcommand{\upcite}[1]{\textsuperscript{\textsuperscript{\cite{#1}}}}  % 上标引用
-
-% 调整行间公式与文本之间的间距
-\makeatletter
-\renewcommand\normalsize{%
-\@setfontsize\normalsize\@xpt\@xiipt
-\abovedisplayskip 4\p@ \@plus2\p@ \@minus5\p@
-\abovedisplayshortskip \z@ \@plus3\p@
-\belowdisplayshortskip 4\p@ \@plus3\p@ \@minus3\p@
-\belowdisplayskip \abovedisplayskip
-\let\@listi\@listI}
-\usepackage{bibspacing}
-\setlength{\bibspacing}{0\baselineskip}
-\makeatother
-
-% 增加表格某一行高
-\newcommand\xrowht[2][0]{\addstackgap[.5\dimexpr#2\relax]{\vphantom{#1}}}  
-
-% 设置全文字体
-\setCJKmainfont[ItalicFont={楷体}, BoldFont={黑体}]{宋体}
-\setmainfont{Times New Roman} 
-
-% 产生一定长度的下划线
-\makeatletter
-\newcommand\dlmu[2][4cm]{\hskip-12pt\underline{\hb@xt@ #1{\hss#2\hss}}\hskip0pt}
-\makeatother
-
-%% ———————————————— %%
-%% ——————正文—————— %%
+%文章开始
 \begin{document}
-% 插入封面
-\include{cover}
+% 插入封面，参数从上到下分别是 文章标题第一行，标题第二行，学生姓名，班级，学号，指导就教师，所在单位，日期
+%均无默认参数
+%不填写的位置直接空出来
+%必须按照顺序填写
+%封面输出需要优化
+\makecover{虚拟同步发电机}{VSG}{学生姓名}{电自卓越191}{2019301011016}{指导教师}{电气工程学院}{2023.2.5}
 
 \newpage
 \setcounter{page}{1}    % 重置页码
 \pagenumbering{Roman}   % 设置正文页码格式
 
 % 插入中文摘要
-\include{摘要}
-
-% 插入英文摘要
-\include{abstract}
+\neepupagestylea
+\begin{Abstractcn}
+    随着电力电子器件的发展，PWM电压型逆变器在交流变频调速、UPS、电能质量控制器、轻型直流输电换流器等电力电子装置中得到了越来越广泛的应用。PWM电压型逆变器直流侧所需的理想无脉动直流电压源通常通过整流加上大直流电容滤波获得。大直流滤波电容的使用，给装置带来占用空间大、成本高及严重影响电能质量方面的问题。因此，研究如何减小甚至去除逆变器直流侧电容，以及解决因其产生的低次谐波和相关问题，具有十分重要的理论意义和实用价值。本文在综述了国内外在PWM电压型逆变器及各种抑制谐波PWM技术的基础上，对目前工程中应用最广泛的SPWM电压型逆变器的主电路及谐波消除调制技术和相关问题进行了深入研究。
+\end{Abstractcn}
+%中文关键字
+%这个版本中摘要和关键字之间的行距暂不满足要求
+\begin{Keywordscn}
+    PWM逆变器；直流电容；调制波重构SPWM；六脉动直流电压
+\end{Keywordscn}
 
 \newpage
+% 插入英文摘要
+\neepupagestylea
+\begin{Abstracten}
+    With the rapid development of the power and electron parts, PWM voltage inverter is applied, on a larger and larger scale, to ac frequency control system、UPS、power quality controller and Converter of highlight HVDC transmission. Non-ripple DC voltage source of PWM voltage type Inverter is gained by rectifiers paralleled connection a large DC filter capacitor. The equipment that uses a large DC filter capacitor has disadvantages, such as bulk, high price and low power quality. It is therefore becoming most significant and valuable to do research on how to reduce capacitance as small as possible or even remove capacitor and how to settle relative issues and to eliminate low order harmonics due to minishing capacitance or removing capacitor. Based on the survey of main circuits of inverter and restraining harmonic effects of PWM techniques, the main circuits and harmonic elimination PWM techniques of SPWM voltage type inverter, which applied widely in industry fields, are profoundly analyzed.
+\end{Abstracten}
+%插入英文关键词
+\begin{Keywordsen}
+    {PWM inverter; DC capacitor; Six-ripple DC voltage; Modulation wave reconstruction SPWM}
+\end{Keywordsen}
+\newpage
 
-% 目录页页眉
-\pagestyle{fancy}
-\fancyhf{}
-\fancyhead[OC]{\zihao{-5}{东北电力大学本科毕业设计论文}}
-\fancyfoot[C]{\thepage}
-
-% 设置目录格式并插入目录
-\renewcommand\cfttoctitlefont{\heiti\zihao{-2}}
-\renewcommand{\contentsname}{\hspace*{\fill}目\quad 录\hspace*{\fill}}
-\setlength{\cftbeforetoctitleskip}{-2em}
-\setlength{\cftaftertoctitleskip}{20pt}
-\setlength\cftbeforesecskip{-0.2em}
-\setlength\cftbeforesubsecskip{-0.2em}
-\setlength{\cftsubsecindent}{0pt}
-\setlength{\cftsubsubsecindent}{2em}
-\setlength\cftbeforesubsubsecskip{-0.2em}
-\setlength{\cftsecnumwidth}{2em}
-\setlength{\cftsubsecnumwidth}{1em}
-\renewcommand{\cftdotsep}{1}
-\setcounter{tocdepth}{3}
-\renewcommand\cftsecfont{\heiti\zihao{-4}}
-\renewcommand\cftsubsecfont{\heiti\zihao{-4}}
-\renewcommand\cftsubsubsecfont{\songti\zihao{-4}}
-\renewcommand\cftsecpagefont{\heiti\zihao{-4}}
-\renewcommand\cftsubsecpagefont{\heiti\zihao{-4}}
-\renewcommand\cftsubsubsecpagefont{\songti\zihao{-4}}
-\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
-\setlength\cftparskip{0.5em}
+%输出目录
 \addcontentsline{toc}{section}{目\quad 录}
 \begin{spacing}{1.5}
 \tableofcontents\thispagestyle{fancy}       % 避免目录第二页没有页眉页脚
 \end{spacing}
 
 
-% 重新定义二级标题，将目录和正文二级标题格式区别开来（前者不能加粗，后者需要加粗）
-% 参数1：编号
-% 参数2：标题
-\newcommand{\subsubbsection}[2]{
-\addcontentsline{toc}{subsubsection}{\songti{#1\hspace{0.7em} #2}}
-\subsubsection*{#1\hspace{1em}\textbf{#2}}
-}   
 
-
-% 正文从此开始
+%% 正文从此开始
 \newpage
-% 设置页眉页脚格式
-\pagestyle{fancy}
-\fancyhf{}
-\fancyhead[OC]{\zihao{-5}{东北电力大学本科毕业设计论文}}
-\fancyfoot[C]{\thepage}
-\pagenumbering{arabic}
-\setcounter{page}{1}        % 页码从正文开始
+
+%正文的页面格式设置
+\neepupagestylechap
 
 % 第一章
 \include{chap01}
 
 % 第二章
 \include{chap02}
+
+%更多章节的书写参考以上两个章节
 
 % 结论
 \include{conclusion}
