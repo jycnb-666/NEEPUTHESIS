@@ -1,8 +1,8 @@
+%Copyright © 2022-2023 jycnb-666 and J.K Hao
 %LaTeX identification
 %LaTeX2e 3.1415926
-%@Author:J.K. Hao(Sebastian Ludwig)
-%@Date:2/4/2023
-%@File_name:NEEPU_THESIS
+%File_name:NEEPU_THESIS
+
 \ProvidesClass{NEEPU_THESIS}
 
 %Customized options
